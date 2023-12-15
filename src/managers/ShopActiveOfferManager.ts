@@ -19,8 +19,8 @@ export default class ShopActiveOfferManager extends BaseManager<ShopActiveOffer>
 				this.client.token,
 			);
 
-			const roses = data.map((element) => new ShopActiveOffer(this.client, element));
-			const entries = Util.transformRequestResult(roses);
+			const activeOffers = data.map((element) => new ShopActiveOffer(this.client, element));
+			const entries = Util.transformRequestResult(activeOffers);
 			const collection = new Collection(entries);
 
 			if (cache) this.cache.concat(collection);

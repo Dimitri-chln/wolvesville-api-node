@@ -19,8 +19,8 @@ export default class BattlePassChallengeManager extends BaseManager<BattlePassCh
 				this.client.token,
 			);
 
-			const battlePassChallege = data.map((element) => new BattlePassChallege(this.client, element));
-			const entries = Util.transformRequestResult(battlePassChallege, 'id');
+			const battlePassChalleges = data.map((element) => new BattlePassChallege(this.client, element));
+			const entries = Util.transformRequestResult(battlePassChalleges, 'id');
 			const collection = new Collection(entries);
 
 			if (cache) this.cache.concat(collection);
